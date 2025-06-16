@@ -1,0 +1,60 @@
+🧪 Execution Steps for Crop Yield Prediction Project
+
+========================================
+STEP 1: Clone or Download the Project Repo
+========================================
+$ git clone https://github.com/Mosespushpa/crop_yield_predictor
+$ cd crop_yield_predictor
+
+========================================
+STEP 2: Set Up Python Environment (Backend)
+========================================
+1. Create a virtual environment (optional but recommended)
+   $ python -m venv venv
+   $ source venv/bin/activate  (Linux/macOS)
+   $ venv\Scripts\activate   (Windows)
+
+2. Install required Python packages:
+   $ pip install -r requirements.txt
+
+3. Train the model:
+   $ cd backend/model
+   $ python train_model.py
+   - This will train XGBoost and Random Forest models.
+   - The best model will be saved to backend/best_model/model.pkl
+
+========================================
+STEP 3: Start the FastAPI Backend Server
+========================================
+$ cd backend
+$ uvicorn main:app --reload
+
+- The server will start at: http://127.0.0.1:8000
+- API Endpoint for prediction: POST /predict
+
+========================================
+STEP 4: Set Up and Run React Frontend
+========================================
+1. Open a new terminal and go to frontend folder:
+   $ cd frontend
+
+2. Install required npm packages:
+   $ npm install
+
+3. Start the frontend app:
+   $ npm start
+
+- The React app will run at: http://localhost:3000
+- Make sure your backend is running for predictions to work.
+
+========================================
+STEP 5: Using the Application
+========================================
+1. Open the browser and go to http://localhost:3000
+2. Fill in the crop details using the form.
+3. Click on "Predict Yield".
+4. The app will show:
+   - Predicted Crop Yield (hg/ha)
+   - Smart Recommendations (Pesticide, Fertilizer advice)
+
+🎉 You're ready to use the Crop Yield Prediction System!
